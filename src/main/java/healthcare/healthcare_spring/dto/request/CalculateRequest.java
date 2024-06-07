@@ -1,14 +1,31 @@
 package healthcare.healthcare_spring.dto.request;
 
 public class CalculateRequest {
-    private int temperature;
-    private int bpm;
+    private int totalWalk;
+    private float totalDistance;
+    private float calorie;
+    private Long measure;
 
-    public int getTemperature() {
-        return temperature;
+    public CalculateRequest(int totalWalk, float totalDistance, float calorie, Long measure) {
+        this.totalWalk = totalWalk;
+        this.totalDistance = totalDistance;
+        this.calorie = calorie;
+        this.measure = measure;
     }
 
-    public int getBpm() {
-        return bpm;
+    public int getTotalWalk() {
+        return totalWalk;
+    }
+
+    public float getTotalDistance() {
+        return totalDistance;
+    }
+
+    public float getCalorie() {
+        return calorie;
+    }
+
+    public Long getMeasure() {
+        return measure;
     }
 }

@@ -8,22 +8,36 @@ public class Calculate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id = null;
 
-    @Column(nullable = false)
-    private int temperature;
-    private int bpm;
-
+    private int totalWalk;
+    private float totalDistance;
+    private float calorie;
+    private Long measure;
     protected Calculate() {}
 
-    public Calculate(int temperature, int bpm) {
-        this.temperature = temperature;
-        this.bpm = bpm;
+    public Calculate(int totalWalk, float totalDistance, float calorie, Long measure) {
+        this.totalWalk = totalWalk;
+        this.totalDistance = totalDistance;
+        this.calorie = calorie;
+        this.measure = measure;
     }
 
-    public int getTpt() {
-        return temperature;
+    public Long getId() {
+        return id;
     }
 
-    public int getBpm() {
-        return bpm;
+    public int getTotalWalk() {
+        return totalWalk;
+    }
+
+    public float getTotalDistance() {
+        return totalDistance;
+    }
+
+    public float getCalorie() {
+        return calorie;
+    }
+
+    public Long getMeasure() {
+        return measure;
     }
 }

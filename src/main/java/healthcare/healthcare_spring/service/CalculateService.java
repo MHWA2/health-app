@@ -15,6 +15,6 @@ public class CalculateService {
     }
 
     public void saveCalculate(CalculateRequest request) {
-        Calculate u = calculateRepository.save(new Calculate(request.getTemperature(), request.getBpm()));
+        Calculate u = calculateRepository.save(new Calculate(request.getTotalWalk(), request.getTotalDistance(), request.getCalorie(), request.getMeasure()));
     }
 }

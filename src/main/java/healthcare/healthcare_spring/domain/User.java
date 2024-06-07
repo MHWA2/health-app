@@ -2,30 +2,18 @@ package healthcare.healthcare_spring.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import org.springframework.data.relational.core.sql.In;
 
 @Entity
 public class User {
     @Id
     private String name;
-    private int height;
-    private int weight;
-    private int goalWeight;
-    private int date;
-    private int goalWalk;
-
-    public int getDate() {
-        return date;
-    }
-
-    public int getGoalWalk() {
-        return goalWalk;
-    }
-
+    private Integer height;
+    private Integer weight;
+    private Integer goalWeight;
+    private Integer date;
+    private Integer goalWalk;
     protected User() {}
-
-    public String getName() {
-        return name;
-    }
 
     public User(String name, int height, int weight, int goalWeight, int date, int goalWalk) {
         this.name = name;
@@ -36,15 +24,27 @@ public class User {
         this.goalWalk = goalWalk;
     }
 
-    public int getHeight() {
+    public String getName() {
+        return name;
+    }
+
+    public Integer getHeight() {
         return height;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public int getGoalWeight() {
+    public Integer getGoalWeight() {
         return goalWeight;
+    }
+
+    public Integer getDate() {
+        return date;
+    }
+
+    public Integer getGoalWalk() {
+        return goalWalk;
     }
 }
