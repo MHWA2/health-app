@@ -10,6 +10,16 @@ public class User {
     private int height;
     private int weight;
     private int goalWeight;
+    private int date;
+    private int goalWalk;
+
+    public int getDate() {
+        return date;
+    }
+
+    public int getGoalWalk() {
+        return goalWalk;
+    }
 
     protected User() {}
 
@@ -17,11 +27,13 @@ public class User {
         return name;
     }
 
-    public User(String name, int height, int weight, int goalWeight) {
+    public User(String name, int height, int weight, int goalWeight, int date, int goalWalk) {
         this.name = name;
         this.height = height;
         this.weight = weight;
         this.goalWeight = goalWeight;
+        this.date = date;
+        this.goalWalk = goalWalk;
     }
 
     public int getHeight() {
