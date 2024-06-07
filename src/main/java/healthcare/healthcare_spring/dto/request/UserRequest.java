@@ -25,7 +25,6 @@ public class UserRequest {
     public int getDate() {
         return date;
     }
-
     public int getGoalWalk() {
         return goalWalk;
     }
