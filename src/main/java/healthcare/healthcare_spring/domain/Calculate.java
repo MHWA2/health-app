@@ -3,6 +3,7 @@ package healthcare.healthcare_spring.domain;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
 
 @Entity
 public class Calculate {
@@ -22,7 +23,7 @@ public class Calculate {
 
     @PrePersist
     public void prePersist() {
-        LocalDate now = LocalDate.now();
+        LocalDate now = LocalDate.now(ZoneId.of("Asia/Seoul"));
         this.year = now.getYear();
         this.month = now.getMonthValue();
         this.day = now.getDayOfMonth();
