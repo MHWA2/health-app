@@ -13,10 +13,10 @@ public class UserService {
         this.userRepository = userRepository;
     }
     public void saveUser(UserRequest request) {
-        if (userRepository.findByName(request.getName()).isPresent()) {
-            throw new IllegalArgumentException(String.format("잘못된 name(%s)이 들어왔습니다. 중복된 이름입니다.", request.getName()));
-        }
         User u = userRepository.save(new User(request.getName(),request.getHeight(),
                 request.getWeight(),request.getGoalWeight(), request.getDate(), request.getGoalWalk()));
+    }
+    public User getUserByName(String name) {
+        return userRepository.findByName(name);
     }
 }

@@ -2,42 +2,49 @@ package healthcare.healthcare_spring.domain;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 public class Calculate {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id = null;
+    private Integer day;
+    private Integer totalStep;
+    private Integer year;
+    private Integer month;
 
-    private int totalWalk;
-    private float totalDistance;
-    private float calorie;
-    private Long measure;
+    private String name;
     protected Calculate() {}
 
-    public Calculate(int totalWalk, float totalDistance, float calorie, Long measure) {
-        this.totalWalk = totalWalk;
-        this.totalDistance = totalDistance;
-        this.calorie = calorie;
-        this.measure = measure;
+    public Calculate(Integer totalStep, String name) {
+        this.totalStep = totalStep;
+        this.name = name;
     }
 
-    public Long getId() {
-        return id;
+    @PrePersist
+    public void prePersist() {
+        LocalDate now = LocalDate.now();
+        this.year = now.getYear();
+        this.month = now.getMonthValue();
+        this.day = now.getDayOfMonth();
     }
 
-    public int getTotalWalk() {
-        return totalWalk;
+    public Integer getDay() {
+        return day;
     }
 
-    public float getTotalDistance() {
-        return totalDistance;
+    public Integer getTotalStep() {
+        return totalStep;
     }
 
-    public float getCalorie() {
-        return calorie;
+    public Integer getYear() {
+        return year;
     }
 
-    public Long getMeasure() {
-        return measure;
+    public Integer getMonth() {
+        return month;
+    }
+
+    public String getName() {
+        return name;
     }
 }
