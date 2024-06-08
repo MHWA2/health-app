@@ -16,7 +16,8 @@ public class CalculateService {
     }
 
     public void saveCalculate(CalculateRequest request) {
-        Calculate u = calculateRepository.save(new Calculate(request.getTotalStep(), request.getName()));
+        Calculate u = calculateRepository.save(new Calculate(request.getDay(), request.getTotalStep(),
+                request.getMonth(), request.getYear(), request.getName()));
     }
     public List<Calculate> getAllCalculates() {
         return calculateRepository.findAll();

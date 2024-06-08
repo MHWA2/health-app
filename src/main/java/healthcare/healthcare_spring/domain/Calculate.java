@@ -15,7 +15,7 @@ public class Calculate {
     private String name;
     protected Calculate() {}
 
-    public Calculate(Integer totalStep, String name) {
+    public Calculate(Integer day, Integer totalStep,Integer month, Integer year, String name) {
         this.totalStep = totalStep;
         this.name = name;
     }
